@@ -54,6 +54,7 @@ class SearchBar extends React.Component {
                     placeholder="Search for data files..."
                     iconPosition="right"
                     filterLabel="search"
+                    autosuggest = {true}
                     react={{
                         and: ["keywordFilter", "dateFilter"]
                     }}

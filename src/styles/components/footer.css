@@ -1,12 +1,15 @@
 footer {
-    position: relative;
+    width: 100%;
+    position: fixed;
     z-index: 5;
+    bottom: 0;
 }
 
 footer nav {
     padding-bottom: 2em;
     padding-top: 2em;
-    position: relative;
+    position: fixed;
+    bottom: 0;
 }
 
 footer nav li {

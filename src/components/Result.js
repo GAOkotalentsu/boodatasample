@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import {
     SelectedFilters,
     ReactiveList,
-    ResultCard
+    ResultList
 } from "@appbaseio/reactivesearch";
 
 class Result extends Component {
@@ -14,7 +14,7 @@ class Result extends Component {
 					componentId="SearchResult"
 					dataField="original_title"
 					from={0}
-					size={4}
+					size={3}
 					className="result-list-container"
 					pagination
 					react={{
@@ -22,20 +22,20 @@ class Result extends Component {
                     }}
                     showLoader = {false}
 					render={({ data }) => (
-						<ReactiveList.ResultCardsWrapper>
+						<ReactiveList.ResultListWrapper>
 							{data.map(item => (
-								<ResultCard key={item.id}>
-									<ResultCard.Image src={item.image} />
-									<ResultCard.Title>
+								<ResultList key={item.id}>
+									<ResultList.Image src={item.image} />
+									<ResultList.Title>
 										<div
 											className="book-title"
 											dangerouslySetInnerHTML={{
 												__html: item.original_title,
 											}}
 										/>
-									</ResultCard.Title>
+									</ResultList.Title>
 
-									<ResultCard.Description>
+									<ResultList.Description>
 										<div className="flex column justify-space-between">
 											<div>
 												<div>
@@ -65,10 +65,10 @@ class Result extends Component {
 												Pub {item.original_publication_year}
 											</span>
 										</div>
-									</ResultCard.Description>
-								</ResultCard>
+									</ResultList.Description>
+								</ResultList>
 							))}
-						</ReactiveList.ResultCardsWrapper>
+						</ReactiveList.ResultListWrapper>
 					)}
 				/>
             </div>

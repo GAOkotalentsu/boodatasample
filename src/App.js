@@ -91,6 +91,7 @@ class App extends Component {
                         }
                     </div>
                 </ReactiveBase>
+                <div style={{height:80}}></div>
                 <Footer />
             </main>
         );
