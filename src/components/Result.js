@@ -24,15 +24,23 @@ class Result extends Component {
 					render={({ data }) => (
 						<ReactiveList.ResultListWrapper>
 							{data.map(item => (
-								<ResultList key={item.id}>
-									<ResultList.Image src={item.image} />
+								<ResultList key={item.id} >
+									<ResultList.Image src={item.image} onClick={() => {
+										console.log("this")
+										this.props.history.push({
+											pathname: '/test',
+											search: '?query=abc',
+											state: { detail: item }
+										  })
+									}}/>
 									<ResultList.Title>
 										<div
 											className="book-title"
 											dangerouslySetInnerHTML={{
-												__html: item.original_title,
+												__html: item.original_title+`<a href='/test/${item.id}'>Test</a>`,
 											}}
-										/>
+										>
+										</div>
 									</ResultList.Title>
 
 									<ResultList.Description>
